@@ -1,0 +1,134 @@
+#guage-average-grade {
+    float: right;
+    width: 20%;
+    text-align: center;
+    margin-top: 1%;
+    margin-right: 2vh;
+}
+
+#chartdiv, #chartdiv1, #chartdiv2, #chartdiv3, #chartdiv4, #chartdiv5, #chartdiv6, #chartdiv7 {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    clear: right; /* Clear elements to the right */
+}
+#chartdiv8, #chartdiv9, #chartdiv10{
+    width : 100%;
+    height: 450px;
+}
+
+#tree {
+    text-align: center;
+    margin-top: 1%;
+    margin-left: 6vh;
+    margin-right: 2vh;
+    width:73%;
+    height: 500px;
+}
+.container-fluid {
+    width: 76.5%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#passfail, #gpadist {
+    text-align: center;
+    margin-top: 1%;
+    margin-right: 1vh;
+    width: 51%;  
+    height: 500px;
+}
+#insights-csai {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#insights-csai > div {
+    flex: 1 0 12%; /* adjust this value as needed */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* adjust this value as needed */
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+#insights-csai > div h4 {
+    color: #009DB4;
+    font-weight: bold;
+    font-family: Arial, sans-serif; /* replace with your preferred font */
+}
+
+#insights-csai > div p {
+    color: #009DB4;
+    font-weight: bold;
+    font-family: Arial, sans-serif; /* replace with your preferred font */
+}
+
+#insights-csai > div .big-number {
+    font-size: 1.5em; /* adjust as needed */
+    font-weight: bold;
+    font-family: Arial, sans-serif; /* replace with your preferred font */
+    color: #111213;
+}
+
+
+#minicharts {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 6vh;
+    margin-right: 2vh;
+    width:73%;
+    height: 515px;
+}
+
+
+#avg-survey-major, #majors-piechart{
+    width : 25%;
+    height: 460px;
+}
+#chartdiv11, #chartdiv12, #chartdiv13 {
+    width : 100%;
+    height: 98%; /* Clear elements to the right */
+}
+#safety-chart{
+    width : 45%;
+    height: 460px;
+}
+#add-charts {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width : 100%;
+}
+#co-chart-sector {
+    width : 72%;
+    height: 500px;
+    text-align: center;
+}
+#genders {
+    width : 25%;
+    height: 500px;
+    text-align: center;
+}
+#progress-sectors{
+    width : 85%;
+    height :650;
+    text-align: center;
+}
+
+#chartdiv14{
+    width :100%;
+    height : 92%;
+}
+#chartdiv15 {
+    width : 100%;
+    height: 94%; /* Clear elements to the right */
+}
+
+#chartdiv16 {
+    width : 100%;
+    height: 94%; /* Clear elements to the right */
+}

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>ZC | CSAI Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+
+    <script src="/static/chart.js" ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+        <div id="mySidenav" class="sidenav">
+          <img src="{{ url_for('static', filename='images/csai-logo (2).png') }}">
+        </div>
+        
+				<!-- <h1><a href="index.html" class="logo">CSAI</a></h1> -->
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="#" data-target="csai-school"><span class="fa fa-graduation-cap"></span> CSAI school</a>
+          </li>
+          <!-- <li>
+              <a href="#" data-target="dsai"><span class="fas fa-robot"></span> DSAI</a>
+          </li>
+          <li>
+            <a href="#" data-target="swd"><span class="fa fa-code"></span> SWD</a>
+          </li>
+          <li>
+            <a href="#" data-target="it"><span class="fa fa-desktop"></span> IT </a>
+          </li> -->
+          <li>
+            <a href="#" data-target = "admissions"><span class="fa fa-paper-plane"></span> Admissions Evaluation</a>
+          </li>
+          <!-- <li>
+            <a href='#'><span class = "fa fa-paper-plane"></span> Admissions Evaluation </a>
+          </li> -->
+        </ul>
+        <!-- cadding a logo taht should be resized to fit into the sidnav when opened -->
+
+        <div class="footer">
+        	<p>
+					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Dashboard was Built by DSAI Student <strong><em>Mohamed Tag</em></strong> <i class="icon-heart" aria-hidden="true"></i>
+					</p>
+        </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div >
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+          </div>
+        </nav>
+
+        
+         <!-- pages -->
+        <div id="content1">
+          <h2 class="mb-4">CSAI School</h2>
+          <div id="csai-school" class="content-section">
+              <div id = "insights-csai">
+                <div id ="average-gpa-csai" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Average GPA</h4>
+                    <p class="big-number"><i class="fa fa-graduation-cap" style="color: #009DB4; margin-right: 12px;"></i>{{average_gpa_csai}}</p>
+                </div>
+                <div id ="no-students-csai" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Number of Students</h4>
+                    <p class="big-number"><i class="fa fa-user-graduate" style="color: #009DB4;margin-right: 12px;"></i>{{num_of_students_csai}}</p>
+                </div>
+                <div id ="no-courses-csai" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Number of Courses</h4>
+                    <p class="big-number"> <i class="fa fa-book" style="color: #009DB4; margin-right: 12px;"></i>{{num_of_courses_csai}}</p>
+                </div>
+                <div id ="no-staff-csai" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Number of Staff</h4>
+                    <p class="big-number"><i class="fa fa-chalkboard-teacher" style="color: #009DB4; margin-right: 12px;"></i>{{num_of_instructors_csai}}</p>
+                </div>
+                <div id ="avg-student-survey" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Avg. Student Survey</h4> 
+                    <p class="big-number"><i class="fa fa-chart-line" style="color: #009DB4; margin-right: 12px;"></i>{{avg_student_survery_csai}}/5</p>
+                </div>
+              </div>
+              
+              <div id = "guage-average-grade" class="shadow-lg p-3 mb-5 bg-body rounded">
+                <h4>School Courses' Average Grade</h4>
+                <div id="chartdiv" ></div>
+                <div id="chartdiv1"></div>
+                <div id="chartdiv2"></div>
+                <div id="chartdiv3"></div>
+                <div id="chartdiv4"></div>
+                <div id="chartdiv5"></div>
+                <div id="chartdiv6"></div>
+                <div id="chartdiv7"></div>
+              </div>
+              
+
+              <div id = "tree" class="shadow-lg p-3 mb-5 bg-body rounded">
+                <h4>CSAI School Staff</h4>
+                <div id = "chartdiv8" ></div>
+              </div>
+
+              
+              <div id = "minicharts">
+                  <div id ="majors-piechart"  class = "shadow-lg p-5 mb-6 bg-body rounded">
+                    <h4>Majors</h4>
+                    <div id = "chartdiv11"></div>
+                  </div>
+                  <div id = "safety-chart" class = "shadow-lg p-5 mb-6 bg-body rounded">
+                    <h4>Students' state</h4>
+                    <div id = "chartdiv12"></div>
+                  </div>
+                  <div id ="avg-survey-major"  class = "shadow-lg p-5 mb-6 bg-body rounded">
+                    <h5>Avg. survey per major</h5>
+                    <div id = "chartdiv13"></div>
+                  </div>
+              </div>
+        
+              <div class = "container-fluid">
+                <div id = "passfail" class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Courses Pass %</h4>
+                    <div id = "chartdiv9" ></div>
+                </div>
+                <div id = "gpadist" class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <h4>Students GPA Distribution</h4>
+                    <div id = "chartdiv10" ></div>
+                </div>
+              </div>
+          </div>
+          <div id="dsai" class="content-section">
+            Content for DSAI
+          </div>
+          <div id="swd" class="content-section">
+            Content for SWD
+          </div>
+          <div id="it" class="content-section">
+            Content for IT
+          </div>
+          <div id="admissions" class="content-section">
+              <!-- <div id = "progress-sectors" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                <h4>GPA Progress per Highschool sector</h4>
+                <div id = "chartdiv16"></div> -->
+              <!-- </div> -->
+              <div id  = "add-charts">
+                <div id = "co-chart-sector" class="shadow-lg p-3 mb-5 bg-body rounded">
+                  <h4>Highschool grade / cGPA corelation</h4>
+                  <div id = "chartdiv14"></div>
+                </div>
+                <div id = "genders" class = "shadow-lg p-3 mb-5 bg-body rounded">
+                  <h4>Genders Distribution</h4>
+                  <div id = "chartdiv15"></div>
+                </div>
+              </div>
+              
+          </div>
+          
+        </div>
+      </div>
+		</div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
